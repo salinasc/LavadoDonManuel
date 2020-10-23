@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------- BODY ------------------------------- */
+
+.body p{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.bloque{
+    width: 100%;
+    font-size: 15px;
+    background-color: gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 40px; 
+}
+
+.bloque.pri{
+    background-image: url("../img/Fondos/007.jpg");  
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.bloque.seg{
+    padding: 40px;
+    overflow: auto;
+}
+
+.bloque.ter{
+    background-image: url("../img/Fondos/006.jpg");
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.marco{
+    flex: 45%;
+    padding: 5%;
+    text-align: center;
+    background-color: white;
+}
+
+.marcoFalso{
+    flex: 55%;
+    padding: 5%;
+    text-align: center;
+}
+
+.iconos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.iconos img{
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+
+.opiniones{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgtxt{
+    flex: 25%;
+    padding-top: 2%;
+    text-align: center;
+    margin: auto;
+}
+
+.imgtxt img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.opinion{
+    padding: 1% 10% 1% 10%;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* ------------------------------ MOVIL ------------------------------- */
+
+
+@media screen and (max-width:480px){
+    .slider {
+        position: relative;
+        height: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .marco{
+        flex: 100%;
+        padding: 5%;
+        text-align: center;
+        background-color: white;
+    }
+
+    .marcoFalso{
+        flex: 0%;
+        padding: 5%;
+        text-align: center;
+    }
+
+    .marcoFalsoIzq{
+        flex: 0%;
+        padding: 5%;
+        text-align: center;
+    }
+}
+
+/* ---------------------------------------- CARRUSEL CSS ---------------------------------------- */
+
+.slider {
+    position: relative;
+    height: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slider_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre la imagen dependiendo del tamaño de la ventana */
+}
+
+.slider_contenedor{
+    background: black;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider_lista{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 400ms ease-in;
+}
+
+.imagenes{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slider_boton{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+}
+
+.slider_boton--izq{
+    left: 0px;
+    z-index: 100;
+}
+
+.slider_boton--der{
+    right: 0px;
+}
+
+.slider_puntos{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    border: none;
+}
+
+.slider_indicador{
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin: 0 12px;
+    background: rgba(0, 0, 0, .3);
+    cursor: pointer;
+    outline: none;
+}
+
+.slider_indicador.indicador-activo{
+    background: rgba(0, 0, 0, .75);
+}
+
+.oculto{
+    display: none;
+}
+
+.slider h5{
+    font-size: 40px;
+}
+
+.slider_boton:hover{
+    background:crimson;
+    border: 0px;
+    padding: 10px;
+    color: white;
+}
+
+/* ------------------------------- BODY ------------------------------- */

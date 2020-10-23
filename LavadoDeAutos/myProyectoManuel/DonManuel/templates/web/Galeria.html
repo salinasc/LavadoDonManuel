@@ -1,0 +1,24 @@
+{% extends "web/Plantilla.html" %}
+{% load static %}
+
+    {% block estilos %}
+        <link rel="stylesheet" href="{% static 'css/EstilosGaleria.css' %}">
+        <link href="{% static 'dist/css/lightbox.min.css' %}" rel="stylesheet" />
+    {% endblock estilos %}
+
+    {% block contenido %}
+        <span class="linea"></span>
+        <section class="galeria">
+            {% for f in lista_fotos %}
+                <a href="{{f.foto.url}}" data-lightbox="autos" data-title="{{f.des_fot}}">
+	                <img src="{{f.foto.url}}" alt="">
+                </a>                   
+            {% endfor %}
+        </section>
+    {% endblock contenido %}
+
+    {% block js %}
+        <script src="{% static 'dist/js/lightbox-plus-jquery.min.js' %}"></script>
+    {% endblock js %}
+
+                    

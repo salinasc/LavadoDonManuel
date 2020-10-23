@@ -1,0 +1,65 @@
+{% extends "web/Plantilla.html" %}
+{% load static %}
+
+    {% block estilos %}
+        <link rel="stylesheet" href="{% static 'css/Registro.css' %}">
+    {% endblock estilos %}
+
+    {% block contenido %}
+        <div class="cuerpo prod">
+            <div class="fregi uno">
+                <form action="" method="POST" id="form" onsubmit="return validarTodo()">
+                    {% csrf_token %}
+                    <h1>Nuevo Producto</h1>
+                    <div class="formu">
+                        <div class="formubloque uno">
+                            <div class="grupo">
+                                <input type="text" name="txtNombre" id="txtNombre" required><span class="barra"></span>
+                                <label for="">Nombre</label>
+                            </div>
+                            <div class="grupo">
+                                <input type="number" name="txtstock" id="txtstock" min="1" required><span class="barra"></span>
+                                <label for="">Stock</label>
+                            </div>
+                            <div class="grupo">
+                                <input type="number" name="txtvalor" id="txtvalor" min="1" required><span class="barra"></span>
+                                <label for="">Valor unitario</label>
+                            </div>                        
+                        </div>
+    
+                        <div class="formubloque dos">
+                            <div class="grupo">
+                                <textarea type="text" name="txtDescripcion" id="txtDescripcion" cols="30" rows="10" minlength="3" maxlength="200">Descripción</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="opcionboton">
+                        <button class="regi" name="accion" type="submit" value="Registrar">Registrar</button>
+                        <button class="regi" name="accion" type="submit" value="Eliminar">Eliminar</button>
+                        <button class="regi" name="accion" type="submit" value="Actualizar">Actualizar</button>
+                    </div>
+                </form>            
+            </div>
+            
+            <div class="fregi dos">
+                <form action="" method="POST" id="form" onsubmit="return validarTodo()">
+                    <div class="formubloque">
+                        <div class="grupo">
+                            <input type="text" name="txtid" id="txtid" required><span class="barra"></span>
+                            <label for="">Id producto</label>
+                        </div>
+                        <div class="grupo">
+                            <input type="text" name="txtNombre" id="txtNombre" required><span class="barra"></span>
+                            <label for="">Nombre producto</label>
+                        </div>    
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+
+    {% endblock contenido %}
+
+    {% block js %}
+        <script src="{% static 'js/validacionProducto.js' %}"></script>
+    {% endblock js %}

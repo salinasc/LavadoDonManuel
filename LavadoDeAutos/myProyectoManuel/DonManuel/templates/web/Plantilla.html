@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'fontawesome-free-5.14.0-web/css/all.css' %}" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>Lavado de autos Manuel</title>
+    <link rel="stylesheet" href="{% static 'css/MenuyFooter.css' %}">
+
+    {% block estilos %}
+
+    {% endblock estilos %}
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="categoria">            
+            <a href="#"><img src="{% static 'img/Logos/Logo1.png' %}" class="lg1"><span class="fas fa-bars"></span></a>
+        </div>
+        <div class="nav">
+            <ul class="contenido">
+                <img src="{% static 'img/Logos/Logo1.png' %}" class="lg2"> 
+                {% if user.is_authenticated %}
+                    <li><a href=""><span class="fas fa-home"></span>Bienvenido {{user.first_name}} {{user.last_name}}</a></li>
+                    <li><a href="{% url 'cerrars' %}"><span class="fas fa-home"></span>Cerrar sesión</a></li>     
+                    <li><a href="{% url 'adpro' %}"><span class="fas fa-pump-soap"></span>Productos</a></li>
+                {% else %}
+                    <li><a href="{% url 'regi' %}"><span class="fas fa-star"></span>Registrarse</a></li>
+                    <li><a href="{% url 'inises' %}"><span class="fas fa-star"></span>Inicio sesión</a></li>
+                {% endif %}                           
+                <li><a href="{% url 'sucur' %}"><span class="fas fa-car-side"></span>Sucursales</a></li> 
+                <li><a href="{% url 'gale' %}"><span class="fas fa-image"></span>Galeria</a></li>
+                <li><a href="{% url 'noso' %}"><span class="fas fa-users"></span>Nosotros</a></li>             
+                <li><a href="{% url 'index' %}"><span class="fas fa-home"></span>Inicio</a></li>                
+            </ul>
+        </div>
+    </div>
+
+
+    {% block contenido %}
+
+    {% endblock contenido %}
+
+    <div class="footer">
+        <div class="footIzq">
+            <div class="redesS">
+                <div class="titRedes">Siguenos en redes Sociales</div>
+                <span class="fab fa-facebook-f"></span>
+                <span class="fab fa-instagram"></span>
+                <span class="fab fa-twitter"></span>
+            </div>
+            <div class="desa">
+                <div class="fder">Desarrollado por Grupo N°3 DWY-007</div>
+                <div class="fder">Cristina Anabalón - Javier Nuñez - Javier Salinas</div>
+                <div class="fder">Analista programador computacional</div>
+            </div>
+        </div>
+
+        <div class="footDer">
+            <div class="ContaDer">
+                <img src="{% static 'img/Logos/Logo2.png' %}" alt="" srcset="">
+                <button class="contacto"><a href="{% url 'conta' %}">Contactanos</a></button>
+                <div class="fder">
+                    @2020 todos los derechos reservados
+                </div>
+                <div class="fder">
+                    +569 123456789
+                </div>
+                <div class="fder">
+                    (022)987654321
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block js %}
+
+    {% endblock js %}
+
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/mijquery.js' %}"></script>
+
+</body>
+</html>

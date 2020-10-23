@@ -1,0 +1,84 @@
+*{
+    border: 0px;
+    margin:0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------- CONTENIDO ------------------------------------------ */
+
+.Body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-image: url("../img/Fondos/009.jpg");
+}
+
+/* ---------------------------------------- SUCURSAL 1 CSS ---------------------------------------- */
+
+.sucursal{
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+.sucursal.sucu2{
+    margin-top: 40px;
+}
+
+.map{
+    flex: 60%;
+    padding: 45px;
+    width: 55%;
+}
+
+.map iframe{
+    padding: 20px;
+    width: 100%;
+}
+
+.encargado {
+    flex: 40%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+}
+
+.encargado h2{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 2%;  
+    background-color: crimson;
+    font-family: 'Josefin Sans', sans-serif; 
+}
+
+.encargado h4{
+    margin-top: 5px;
+    font-size: 17px;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;    
+}
+
+.encargado img{
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 5%;
+}
+
+.encargado img:hover{
+    filter: sepia(60%);
+    
+}
+
+.encargado{
+    background: rgb(71, 69, 69, 0.7);
+}
+
+/* -------------------------------------------------------------------- */
+
+

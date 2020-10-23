@@ -1,0 +1,43 @@
+{% extends "web/Plantilla.html" %}
+{% load static %}
+
+    {% block estilos %}
+    <link rel="stylesheet" href="{% static 'css/EstiloSucursal.css' %}">
+    {% endblock estilos %}
+
+    {% block contenido %}
+        <div class="Body">
+            <div class="sucursal">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832.5226917580545!2d-70.66320437076196!3d-33.42087787944951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5c95343ad8d%3A0x3190c75a89661f99!2sIndependencia%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1599681512975!5m2!1ses-419!2scl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="encargado">
+                    <h2>Casa Matriz</h2>
+                    <img src="{% static 'img/Personas/EdPersona4.jpg' %}" alt="">
+                    <div class="info">
+                        <h4>Jefe caza matriz: Elvira Salazar L.</h4>
+                        <h4>Dirección: Fermin Vivaceta 2305, Independecia, Region Metropolitana.</h4>
+                        <h4>Horario de Atención: Lunes a Viernes de 10:00 a 18:00 Hrs</h4>
+                        <h4>Fono: (02)2 8746 8874</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="sucursal sucu2"> 
+                <div class="encargado">
+                    <h2>Sucursal Independecia</h2>
+                    <img src="{% static 'img/Personas/EdPersona5.jpg' %}" alt="">
+                    <div class="info2">
+                        <h4>Jefe de Sucursal: Cristian Espinoza A.</h4>
+                        <h4>Dirección: Independencia 45 Santiago, Independecia, Region Metropolitana.</h4>
+                        <h4>Horario de Atención: Lunes a Viernes de 10:00 a 18:00 Hrs</h4>
+                        <h4>Fono: (02)2 2560 0160</h4>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.1808538666896!2d-70.58096378479677!3d-33.60061168073122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d703e628ee45%3A0xc22e0ff4c2331919!2sIndependencia%2045%2C%20Puente%20Alto%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1599084369732!5m2!1ses-419!2scl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    {% endblock contenido %}
