@@ -1,0 +1,217 @@
+:root{
+    --colorTextos: #49454567;
+}
+
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------ CUERPO ------------------------------ */
+
+.cuerpo{
+    height: 100%;
+    padding: 4%;
+    display: flex;
+    background-image: url("../img/Fondos/004.jpg");
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    font-family: 'Josefin Sans', sans-serif; 
+}
+
+.cuerpo.cont{
+    background-image: url("../img/Fondos/005.jpg");
+}
+
+.cuerpo.prod{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("../img/Fondos/008.jpg");
+}
+
+#form{
+    padding: 100px 0px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(255, 255 ,255 , 0.8);
+    background-color: rgba(255, 255 ,255 , 0.8);
+}
+
+#form_eli{
+    padding: 20% 0px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(255, 255 ,255 , 0.8);
+    background-color: rgba(255, 255 ,255 , 0.8);
+}
+
+#form h1{
+    text-align: center;
+}
+
+.formu{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formubloque{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.formubloque a{
+    text-decoration: none;
+}
+
+.grupo{
+    margin:45px;
+    position: relative;
+}
+
+.grupo input{
+    width: 100%;
+    border: none;
+    color: black;
+    display: block;
+    font-size: 18px;
+    background: none;
+    padding: 10px 10px 10px 5px;
+    border-bottom: 1px solid var(--colorTextos);
+}
+
+#txtComentario{
+    height: 40px;
+}
+
+.grupo input:focus{
+    outline: none;
+    color: #5e5d5d;
+}
+
+.grupo input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 12px;
+    color: #2196f3;
+}
+
+.barra{
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.barra::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    transition: 0.3s ease width;
+    background-color: crimson;
+    left: 0;
+}
+
+.grupo input:focus~.barra::before{
+    width: 100%;
+}
+
+.grupo label{
+    position: absolute;
+    font-size: 16px;
+    bottom: 0;
+    top: 10px;
+    left: 5px;
+    color: var(--colorTextos);
+    pointer-events: none;
+    transition: 0.5s ease-in-out all;
+    text-shadow: none;
+}
+
+#fecN{
+    top: -2px;
+}
+
+.formubloque.dos{
+    margin-top: -5px;
+}
+
+.regi{
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+    color: white;
+    margin: auto;
+    width: 30%;
+    display: block;
+    border: none;
+    outline: none;
+    background-color: crimson;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.opcionboton{
+    padding: 5%;
+    display: flex;
+}
+
+.opcionboton button{
+    width: 25%;
+}
+
+.contacto a{
+    color: white;
+    text-decoration: none;
+}
+
+#txtComentario{
+    min-height: 125px;
+    max-height: 125px;
+    min-width: 200px;
+    max-width: 800px;
+    border: none;
+    outline: none;
+}
+
+#txtDescripcion{
+    min-height: 125px;
+    max-height: 125px;
+    min-width: 200px;
+    max-width: 800px;
+    border: none;
+    outline: none;
+}
+
+.fregi.uno{
+    flex: 50%;
+}
+
+.fregi.dos{
+    flex: 45%;
+}
+
+/* -------------------------------------------------------------------- */
+
+.alert {
+    padding-top: 2%;
+    font-size: 20px;
+    color: crimson;
+    text-align: center;
+}
+
+.botones{
+    display: flex;
+}
+
+.opregi{
+    margin-top: 10px;
+}
+
+/* ----------------------------------------- */

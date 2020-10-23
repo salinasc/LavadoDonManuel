@@ -1,0 +1,242 @@
+*{
+    margin:0;
+    padding:0; 
+    box-sizing: border-box;
+}
+
+/*---MISION Y VISION DE LA EMPRESA---*/
+
+.contenedor{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-family: 'Josefin Sans', sans-serif; 
+}
+
+/*--1--*/
+
+.mision{
+    padding:40px;
+    justify-content: center;
+    box-shadow: 0px 15px 25px rgba(0,0,0,.5);    
+}
+
+.mision h1{
+    margin-top:20px;
+    text-align: center;    
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+}
+
+.mision h1:hover{
+    color:crimson;
+}
+
+.mision p{
+    margin-top:50px;
+    padding:30px 30px;
+    text-align: justify;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+}
+
+/*--2--*/
+
+.imagen-1{  
+    background-size: 120%;   
+    background-image: url("../img/Fondos/009.jpg");
+    box-shadow: 0px 15px 25px rgba(0,0,0,.5); 
+    background-size: cover;
+    background-repeat: no-repeat;        
+}
+
+.imagen-1:hover{ 
+    background-size: 130%; 
+    background-image: url("../img/Fondos/008.jpg"); 
+    transition:all 1.5s ease-in-out;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+/*--3--*/
+
+.imagen-2{
+    background-size: 100%;    
+    background-image: url("../img/Fotos/2.jpeg");
+    box-shadow: 0px 15px 25px rgba(0,0,0,.5);        
+}
+
+.imagen-2:hover{
+    background-image: url("../img/Fotos/1.jpeg"); 
+    transition:all 1.5s ease-in-out;
+}
+
+
+/*--4--*/
+
+.vision{    
+    padding:40px;
+    box-shadow: 0px 15px 25px rgba(0,0,0,.5);     
+}
+
+.vision h1{
+    margin-top:20px;
+    text-align: center;    
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+}
+
+.vision h1:hover{
+    color:crimson;
+}
+
+.vision p{
+    margin-top:50px;
+    padding:30px 30px;
+    text-align: justify;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+}
+
+/*--5--*/
+
+.texto-1{     
+    padding:60px;      
+}
+
+.cont-text1{
+    padding:50px; 
+    background:linear-gradient(140deg,#000, crimson,#000);
+    border-radius: 5px;    
+    color:#ffffff;
+    background-size: 400% 300%;
+    animation:movgradiante 5s ease infinite;
+}
+
+/*--6--*/
+
+.texto-2{     
+    padding:60px;      
+}
+
+.cont-text2{
+    padding:50px; 
+    background:linear-gradient(140deg,#000, crimson,#000);
+    border-radius: 5px;    
+    color:#ffffff;
+    background-size: 400% 300%;
+    animation:movgradiante 5s ease infinite;
+}
+
+.lista{
+    list-style: none; 
+    list-style: decimal; 
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 0;   
+}
+
+.lista1 {
+    counter-reset: lis ;     
+}
+
+.lista2 {
+    counter-reset: lis 3;     
+}
+
+.lis{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    padding: .4em;
+    margin: .5em 0 .5em 2.5em;    
+    color:#ffffff;
+    text-decoration: none;
+    transition: all .3s ease-out; 
+    text-align: justify;  
+}
+
+.lis:hover{
+    background: #e63d5f;
+}   
+
+.lis:before{
+    content: counter(lis);
+    counter-increment: lis 1;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: rgba(0,0,0,.6);
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.lis:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+
+.lis:hover:after{
+    left: -.5em;
+    border-left-color: rgba(225,225,225,.5);             
+}
+
+
+@keyframes movgradiante {
+    0% {background-position: 0% 50% ;}
+    50% {background-position: 100% 50% ;}
+    100% {background-position: 0% 50% ;}
+}
+
+
+@media screen and (max-width:1060px){
+    .contenedor{        
+        grid-template-columns: 1fr ;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr ;
+    }
+    
+    .imagen-1{
+        height: 45vh;
+        background-size: cover;
+        background-repeat: no-repeat;                 
+    }
+
+    .imagen-2{
+        height: 45vh;        
+    }
+
+    .texto-1{
+        padding: 8px;        
+    }
+
+    .texto-2{
+        padding: 8px;        
+    }
+}
+
+@media screen and (max-width:375px){
+
+    .imagen-1{  
+        background-size: 160%;
+        background-size: cover;
+        background-repeat: no-repeat; 
+    }
+    
+    .imagen-1:hover{  
+        background-size: 190%;       
+    }
+
+    .footer{
+        display:grid;
+    }
+}

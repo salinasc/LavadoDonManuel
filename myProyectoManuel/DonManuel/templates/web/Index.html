@@ -1,0 +1,96 @@
+{% extends "web/Plantilla.html" %}
+{% load static %}
+
+    {% block estilos %}
+        <link rel="stylesheet" href="{% static 'css/EstilosIndex.css' %}">
+    {% endblock estilos %}
+
+    {% block contenido %}
+        
+        <div class="slider">
+
+            <button class="slider_boton slider_boton--izq oculto"><h5><</h5></button>
+            
+            <div class="slider_contenedor">
+                <ul class="slider_lista">
+                    {% for i in slider %}
+
+                        {% if i.IdSlider == '1' %}
+                            <li class="imagenes indicador-activo">
+                                <img class="slider_img" src="{{i.Slider.url}}" alt="{{i.IdSlider}}" srcset=""> 
+                            </li>
+                        {% else %}
+                            <li class="imagenes">
+                                <img class="slider_img" src="{{i.Slider.url}}" alt="{{i.IdSlider}}" srcset="">
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+            </div>
+    
+            <div class="slider_puntos">
+                {% for i in slider %}
+
+                    {% if i.IdSlider == '1' %}
+                        <button class="slider_indicador indicador-activo"></button>    
+                    {% else %}
+                        <button class="slider_indicador"></button>
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+
+            <button class="slider_boton slider_boton--der"><h5>></h5></button>
+
+        </div>
+
+        <div class="body">
+            <div class="bloque pri">
+                <div class="marco">
+                    <div class="iconos">
+                        <img src="{% static 'img/Iconos/png/014-brush.png' %}" alt="" srcset="">
+                        <img src="{% static 'img/Iconos/png/015-mat.png' %}" alt="" srcset="">
+                        <img src="{% static 'img/Iconos/png/029-vacuum cleaner.png' %}" alt="" srcset="">
+                    </div>
+                    <p>Usando productos de calidad únicos para cada material de su auto, el acabado del interior quedara reluciente y fresco sin ningún tipo de daño en materiales más sensibles, además contamos con aspiradoras de última generación que se encargaran de cada esquina posible.</p>
+                </div>
+                <div class="marcoFalso"></div>
+            </div>
+
+            <div class="bloque seg">
+                <div class="opiniones">
+                    <div class="imgtxt">
+                        <img src="{% static 'img/Personas/EdPersona1.png' %}" alt="" srcset="">
+                        <div class="opinion">”Lleve mi auto donde don Manuel mientas yo asistía a una reunión, al volver por él, ¡era como si fuera completamente nuevo! El exterior brillaba y el interior olía a nuevo, sin duda lo ¡Recomiendo!”</div>
+                    </div>
+                    <div class="imgtxt">
+                        <img src="{% static 'img/Personas/EdPersona2.png' %}" alt="" srcset="">
+                        <div class="opinion">“Deje 1000 pesos en monedas en mi guantera, para ponerlo a prueba, al volver todo estaba allí y el auto estaba como nuevo. Es bueno tener alguien de confianza que se encargue del lavado de mi auto. Recomendado”</div>
+                    </div>
+                    <div class="imgtxt">
+                        <img src="{% static 'img/Personas/EdPersona3.png' %}" alt="" srcset="">
+                        <div class="opinion">“No tenía tiempo para dejar el auto, pero me recomendaron sus máquinas automatizadas, sin duda de las mejores del país. ¡Un lavado expresó a buen precio y de calidad!, Recomendado”</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bloque ter">
+                <div class="marcoFalso"></div>
+                <div class="marco">
+                    <div class="iconos">
+                        <img src="{% static 'img/Iconos/png/003-car wash.png' %}" alt="" srcset="">
+                        <img src="{% static 'img/Iconos/png/028-car wash.png' %}" alt="" srcset="">
+                        <img src="{% static 'img/Iconos/png/008-car service.png' %}" alt="" srcset="">
+                    </div>
+                    <p>Maquinaria automatizada de ultima generación, proporciona un lavado completo gracias a sus distintas fases que dejan el exterior de su auto como nuevo. Sino cuenta con el tiempo y requiere un lavado, sin duda esta es su mejor opción.</p>
+                </div>
+            </div>
+        </div>
+
+    {% endblock contenido %}
+
+    {% block js %}
+        <script src="{% static 'js/EfectoSliders.js' %}"></script>
+    {% endblock js %}
+

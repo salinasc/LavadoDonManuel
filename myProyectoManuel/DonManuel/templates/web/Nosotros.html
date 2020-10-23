@@ -1,0 +1,76 @@
+{% extends "web/Plantilla.html" %}
+{% load static %}
+
+    {% block estilos %}
+        <link rel="stylesheet" href="{% static 'css/EstilosNosotros.css' %}"> 
+    {% endblock estilos %}
+
+    {% block contenido %}
+        <div class="contenedor">
+            <div class="mision">
+                {% for t in text %}
+                    <h1>{{t.tit1}}</h1>
+                    <p>{{t.txt1}}<p>
+                {% endfor %}
+            </div>
+
+            <div class="imagen-1">                          
+            </div>
+
+            <div class="imagen-2">            
+            </div>
+
+            <div class="vision">
+                {% for t in text %}
+                    <h1>{{t.tit2}}</h1>
+                    <p>{{t.txt2}}<p>
+                {% endfor %}
+            </div>
+
+            
+            <div class="texto-1">
+                <div class="cont-text1">             
+                    <div class="lista lista1">
+                        <li class="lis">
+                            Nuestro personal
+                            está comprometido en otorgarle a usted un 
+                            buen servicio.                            
+                        </li>
+
+                        <li class="lis">
+                            Nosotros como equipo de trabajo presentamos la experiencia
+                            necesaria para ejecutar lavados y encerados de forma profesional.                    
+                        </li>       
+                        
+                        <li class="lis">
+                            Los productos de limpieza que utilizamos son de calidad y a su vez 
+                            son 100% seguros para el medioambiente                    
+                        </li>
+                    </div>        
+                </div>
+            </div>
+
+            <div class="texto-2">
+                <div class="cont-text2">
+                    <div class="lista lista2">
+                        <li class="lis">
+                            Los servicios que otorgamos de limpieza presentan garantia 
+                            sin costos. Siempre entregaremos un trabajo realizado por 
+                            completo.
+                        </li>
+                        
+                        <li class="lis">
+                            Nuestros trabajadores estan capacitados para el servicio, con especialización 
+                            técnica o profesional. 
+                        </li>                    
+                        
+                        <li class="lis">
+                            Siempre estaremos dispuestos a entregarle un servicio seguro y de
+                            confianza. Así usted podrá dejar su vehículo a nuestro cuidado.
+                        </li>  
+                    </div>
+                </div>                          
+            </div>
+            
+        </div>
+    {% endblock contenido%}

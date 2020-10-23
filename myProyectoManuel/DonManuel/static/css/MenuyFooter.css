@@ -1,0 +1,208 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------- MENU CSS ---------------------------------------- */
+
+.categoria{
+    display: none;
+}
+
+.lg2{ 
+    float:left;             
+    width: 140px;
+    height: 50px;  
+    margin-left:20px;
+    margin-top:5px;
+}
+
+.header{
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.nav{
+    width: 100%;
+    background: #292828;
+}
+
+
+.nav ul{
+    list-style: none;
+    overflow: hidden;
+}
+
+.nav ul li{
+    float: right;
+    color:#ffffff; 
+    margin-right:10px;       
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display:block;
+    padding: 25px;
+    font-size: 15px;
+} 
+
+.nav ul li a:hover{
+    color:white;
+} 
+
+.nav ul li:hover{
+    background:crimson;
+}
+
+.fas{
+    margin-right:5px ;
+
+}
+
+@media screen and (max-width:1040px){
+
+    .nav{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        position:fixed;
+        left:-100%;
+        z-index:800;
+        position: absolute;
+    }
+    .nav ul li {
+        display:block;
+        float:none;
+        border-bottom:solid 1px lightgray;
+        border-top:solid 1px lightgray;        
+    }
+    
+    .nav ul li a{
+        font-size: 15px;
+    }
+
+    .categoria{
+        display:block;
+        width: 100%;
+        background: #292828;        
+    }
+
+    .categoria a{
+        display: block;
+        padding: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: bold;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box ;
+    }
+
+    
+    .categoria .fa-bars{
+        float: right;
+        margin-top:10px    
+    }
+
+    .lg2{
+        display:none;
+    }
+
+    .categoria .lg1{              
+        width: 140px;
+        height: 50px;    
+        margin-left:0;
+        margin-top:0; 
+        float:none;           
+    }
+} 
+
+/* ---------------------------------------- FOOTER CSS ---------------------------------------- */
+
+.footer{
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    background-color: #292828;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.footIzq{
+    flex: 80%;
+    height: 60%;
+}
+
+.fab{
+    font-size: 50px;
+}
+
+.footDer{
+    flex: 20%;
+    height: 60%;
+}
+
+.contacto{
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+    color: white;
+    width: 80%;
+    display: block;
+    border: none;
+    background-color: crimson;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.ContaDer img{
+    width: 180px;
+    height: 60px;
+}
+
+.contacto a{
+    color: white;
+    text-decoration: none;
+}
+
+.fder{
+    margin-top: 5px;
+}
+
+.fab.fa-facebook-f:hover{
+    color: #3b5998;
+}
+
+.fab.fa-instagram:hover{
+    color: #F77737;
+}
+
+.fab.fa-twitter:hover{
+    color: #1DA1F2;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+@media screen and (min-width:481px) and (max-width:1000px){
+
+    .footIzq{
+        flex: 60%;
+        height: 60%;
+    }
+    
+    .fab{
+        font-size: 50px;
+    }
+    
+    .footDer{
+        flex: 40%;
+        height: 60%;
+    }
+
+    .contacto{
+        width: 60%;
+    }
+}

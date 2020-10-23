@@ -1,0 +1,40 @@
+{% extends "web/Plantilla.html" %}
+{% load static %}
+
+    {% block estilos%}
+        <link rel="stylesheet" href="{% static 'css/Registro.css' %}">
+    {% endblock estilos %}
+
+    {% block contenido %}
+        <div class="cuerpo cont">
+            <form action="" method="POST" id="form">
+                {% csrf_token %}
+                <h1>Contactanos</h1>
+                <div class="formu">
+                    <div class="formubloque uno">
+                        <div class="grupo">
+                            <input type="text" name="txtNombre" id="txtNombre" required><span class="barra"></span>
+                            <label for="">Nombre</label>
+                        </div>
+                        <div class="grupo">
+                            <input type="text" name="txttelefono" id="txttelefono" required><span class="barra"></span>
+                            <label for="">Teléfono</label>
+                        </div>
+                        <div class="grupo">
+                            <input type="email" name="txtEmail" id="txtEmail" required><span class="barra"></span>
+                            <label for="">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="formubloque dos">
+                        <div class="grupo">
+                            <textarea type="text" name="txtComentario" id="txtComentario" cols="30" rows="10" required>Escriba su comentario</textarea>
+                        </div>
+
+                        <button class="regi" type="submit">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    {% endblock contenido %}
+
