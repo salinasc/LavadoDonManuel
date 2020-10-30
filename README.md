@@ -1,8 +1,8 @@
 # LavadoDonManuel
 Proyecto Lavado de autos Don Manuel
 
-Integrantes:  Cristina Anabalon
-              Javier Nuñez
+Integrantes:  Cristina Anabalon /
+              Javier Nuñez /
               Javier Salinas
 
 Sección:      DWY 007D
