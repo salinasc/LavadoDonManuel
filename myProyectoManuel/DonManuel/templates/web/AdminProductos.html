@@ -2,7 +2,7 @@
 {% load static %}
 
     {% block estilos %}
-        <link rel="stylesheet" href="{% static 'css/RegistroProductos.css' %}">
+        <link rel="stylesheet" href="{% static 'css/RegistroProducto.css' %}">
     {% endblock estilos %}
 
     {% block contenido %}
@@ -50,6 +50,24 @@
 
             <div class="formulario lista">
                 <h1>Lista de productos</h1>
+                
+                <div class="flitrosNP">
+                    <form action="{% url 'filnom' %}" method="post" class="formuFiltro">
+                        {% csrf_token %}
+                        <div class="filtro N">
+                            <input type="text" name="txtfiltroN" id="txtfiltroN">
+                            <button class="regi">Filtrar Nombre</button>
+                        </div>
+                    </form> 
+                    <form action="{% url 'filpre' %}" method="post" class="formuFiltro">
+                        {% csrf_token %}
+                        <div class="filtro P">
+                            <input type="number" name="txtfiltroP" id="txtfiltroP">
+                            <button class="regi">Filtrar Precio</button>
+                        </div>
+                    </form>   
+                </div>
+
                 <table>
                     <tr class="encabezado">
                         <td id="td8">ID</td>
@@ -68,12 +86,8 @@
                             <td>{{i.sto_pro}}</td>
                             <td>{{i.des_pro}}</td>
                             <td>
-
-                                <!--<a href="{% url 'eliprod' i.num_pro %}" title="Eliminar"><span class="fas fa-times"></span></a>-->
-
                                 <a onclick="confirmar({{i.num_pro}})" class="bo"><span class="fas fa-times"></span></a>
                                 <a href="{% url 'actprod' i.num_pro %}" title="Actualizar"><span class="fas fa-redo-alt"></span></a>
-                                
                             </td>
                         </tr>
                     {% endfor %}

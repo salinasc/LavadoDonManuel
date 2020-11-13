@@ -29,6 +29,10 @@
                         <div class="opregi">
                             ¿Desea registrarse?, Presione <a href="{% url 'regi' %}">Aquí</a>
                         </div>
+                        <div class="opregi">
+                            ¿Olvido su contraseña?, Presione <a href="{% url 'password_reset' %}">Aquí</a>
+                        </div>
+                        <a href="{% url 'social:begin' 'facebook' %}" class="facebtnL"><span class="fab fa-facebook-f Log"> Login con facebook</span></a>
                     </div>
                 </div>
             </form>

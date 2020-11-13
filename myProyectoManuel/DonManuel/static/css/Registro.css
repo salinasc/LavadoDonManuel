@@ -86,6 +86,18 @@
     border-bottom: 1px solid var(--colorTextos);
 }
 
+.tipocon{
+    width: 60%;
+    height: 25px;
+}
+
+.seleCon{
+    color: #2196f3;
+    margin: 45px;
+    display: grid;
+    text-align: left;
+}
+
 #txtComentario{
     height: 40px;
 }
@@ -135,12 +147,25 @@ input:valid~label{
     text-shadow: none;
 }
 
+#txtMensa{
+    min-height: 145px;
+    max-height: 145px;
+    min-width: 200px;
+    max-width: 800px;
+    border: none;
+    outline: none;
+}
+
 #fecN{
     top: -2px;
 }
 
 .formubloque.dos{
     margin-top: -5px;
+}
+
+.formubloque.dos.C{
+    margin-top: 0px;
 }
 
 .regi{
@@ -171,15 +196,7 @@ input:valid~label{
     text-decoration: none;
 }
 
-#txtComentario{
-    min-height: 125px;
-    max-height: 125px;
-    min-width: 200px;
-    max-width: 800px;
-    border: none;
-    outline: none;
-}
-
+#txtComentario,
 #txtDescripcion{
     min-height: 125px;
     max-height: 125px;
@@ -195,6 +212,15 @@ input:valid~label{
 
 .fregi.dos{
     flex: 45%;
+}
+
+.fab.fa-facebook-f.Log{
+    width: 80%;
+    height: 40px;
+    background-color: #2196f3;
+    color: white;
+    padding: 13px;
+    font-size: 18px;
 }
 
 /* -------------------------------------------------------------------- */

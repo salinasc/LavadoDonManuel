@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Fotos, Producto, MisVis, Slider
+from .models import Fotos, Producto, MisVis, Slider, Contacto
 
 # Register your models here.
 
@@ -23,7 +23,15 @@ class SliderRegis(admin.ModelAdmin):
     search_fields = ['IdSlider']
     list_per_page = 10
 
+class ContactoEma(admin.ModelAdmin):
+    list_display = ['num_con','nom_con','ape_con','asu_con','tco_con','msg_con']
+    search_fields = ['num_con','ape_con','asu_con']
+    list_per_page = 10
+
+    
+
 admin.site.register(Fotos, FotoRegis)
 admin.site.register(Producto, ProdRegis)
 admin.site.register(MisVis, MisVisRegis)
 admin.site.register(Slider, SliderRegis)
+admin.site.register(Contacto, ContactoEma)

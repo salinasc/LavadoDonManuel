@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from django.core import mail
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,6 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Vinculacion con facebook
+SOCIAL_AUTH_FACEBOOK_KEY = '498410987782957'
+SOCIAL_AUTH_FACEBOOK_SECRET = '0692a2498e7b95c40a0d53e3ba41c39a'
 
 # Application definition
 
@@ -39,6 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'DonManuel.apps.DonmanuelConfig',
+    'api.apps.ApiConfig',
+    'rest_framework', #conexion apis
+    'social_django', #login con face
+    'pwa', #web progresivas o servisworker
+    'fcm_django',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'myProyectoManuel.urls'
@@ -64,6 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -119,7 +131,38 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+FCM_DJANGO_SETTINGS = {
+         # default: _('FCM Django')
+        "APP_VERBOSE_NAME": "lavado-de-autos-don-manuel",
+         # Your firebase API KEY
+        "FCM_SERVER_KEY": "AAAA4XJjHTQ:APA91bG9bQc_R9apKk2VIfIRUtygtsb70thQJLFnvTfqgqGjA6wgnVClOYW-UefYaZ-eLm-E7rYFofM03DApTDQTZIN1RwmUvJ6ynm9EyItPmLJuLAb5ib5ZwzntCgsM3LTcYgZvn4yi",
+         # true if you want to have only one active device per registered user at a time
+         # default: False
+        "ONE_DEVICE_PER_USER": False,
+         # devices to which notifications cannot be sent,
+         # are deleted upon receiving error response from FCM
+         # default: False
+        "DELETE_INACTIVE_DEVICES": True,
+}
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')
+
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'lavadodonmanuel@gmail.com'
+EMAIL_HOST_PASSWORD = 'duoc2020cjj'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# autentificacion de facebook
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_REDIRECT_URL='/'

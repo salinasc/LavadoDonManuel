@@ -34,3 +34,14 @@ class Slider(models.Model):
 
     def __str__(self):
         return self.IdSlider
+
+class Contacto(models.Model):
+    num_con = models.AutoField(primary_key = True)
+    nom_con = models.CharField(max_length = 50)
+    ape_con = models.CharField(max_length = 50)
+    asu_con = models.CharField(max_length = 50)
+    tco_con = models.CharField(max_length = 10)
+    msg_con = models.TextField(max_length = 200)
+
+    def __str__(self):
+        return self.nom_con

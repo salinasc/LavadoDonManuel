@@ -13,6 +13,83 @@
 
     {% endblock estilos %}
 
+    {% load pwa %}
+    
+    {% progressive_web_app_meta %}
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-messaging.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBvqLErqAlub1cP40ssg0oQP43mF6bAXlM",
+            authDomain: "lavado-de-autos-don-manuel.firebaseapp.com",
+            databaseURL: "https://lavado-de-autos-don-manuel.firebaseio.com",
+            projectId: "lavado-de-autos-don-manuel",
+            storageBucket: "lavado-de-autos-don-manuel.appspot.com",
+            messagingSenderId: "968286739764",
+            appId: "1:968286739764:web:4b9265b69389fba0d45961"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        let messaging = firebase.messaging(); //Instancia del servicio de mensajeria
+
+        navigator.serviceWorker
+        .register('serviceworker.js')
+        .then(function(register){
+            messaging.useServiceWorker(register);
+
+            //Solicitar autorizacion para notificacion
+            messaging.requestPermission()
+            .then(function(){
+                console.log("El usuario acepto notificaciones")
+
+                //Generar un token
+                return messaging.getToken();
+            })
+            .then(function(token){
+                //Mostrar token
+                console.log(token)
+                //Grabar token (enviar a la view.py)
+                fetch('guardar-token/',{
+                    method:'post',
+                    headers: {
+                        'Content-Type':'application/json',
+                        'Accept':'application/json'
+                    },
+                    body: JSON.stringify({
+                        'token':token
+                    })
+                })
+            })
+            .catch(function(e){
+                console.log("El usuario no acepto las notificaciones")
+            })
+        })
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // Modelo de notificacion de producto
+        messaging.onMessage(function(payload){
+            let titulo = payload.Notification.title
+            let opciones = {
+                body: payload.Notification.body,
+                icon: payload.Notification.icon
+            }
+            let mensaje = new Notification(titulo,opciones)
+        })
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    </script>
+
 </head>
 <body>
 
@@ -25,11 +102,11 @@
                 <img src="{% static 'img/Logos/Logo1.png' %}" class="lg2"> 
                 {% if user.is_authenticated %}
                     <li><a href=""><span class="fas fa-home"></span>Bienvenido {{user.first_name}} {{user.last_name}}</a></li>
-                    <li><a href="{% url 'cerrars' %}"><span class="fas fa-home"></span>Cerrar sesión</a></li>     
+                    <li><a href="{% url 'cerrars' %}"><span class="fas fa-sign-out-alt"></span>Cerrar sesión</a></li>     
                     <li><a href="{% url 'adpro' %}"><span class="fas fa-pump-soap"></span>Productos</a></li>
                 {% else %}
-                    <li><a href="{% url 'regi' %}"><span class="fas fa-star"></span>Registrarse</a></li>
-                    <li><a href="{% url 'inises' %}"><span class="fas fa-star"></span>Inicio sesión</a></li>
+                    <li><a href="{% url 'regi' %}"><span class="fas fa-user-circle"></span>Registrarse</a></li>
+                    <li><a href="{% url 'inises' %}"><span class="fas fa-sign-in-alt"></span>Inicio sesión</a></li>
                 {% endif %}                           
                 <li><a href="{% url 'sucur' %}"><span class="fas fa-car-side"></span>Sucursales</a></li> 
                 <li><a href="{% url 'gale' %}"><span class="fas fa-image"></span>Galeria</a></li>
