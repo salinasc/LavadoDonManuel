@@ -7,6 +7,8 @@ Integrantes:  Cristina Anabalon /
 
 Sección:      DWY 007D
 
+La rama de TerceraUnidad contiene el proyecto al completo.
+
 Se aplicaron pruebas que apuntan al registro de usuarios, eliminacion de usuarios y agregar productos, estas son:
 
 class TestProducto(unittest.TestCase):
